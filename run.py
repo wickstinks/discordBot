@@ -5,6 +5,7 @@ import time
 from discord.ext import commands
 from datetime import datetime
 
+# Store a time format
 start_time = time.time()
 datetime.now()
 current_time = datetime.now().astimezone().strftime("%H:%M")
