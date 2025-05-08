@@ -1,4 +1,4 @@
-# 🤖 discord.py
+# 📊 Discord Bot
 
 Discord Bots are interactive chat bots in discord that make the platform more engaging, useful and easy-to-use. This repository will help you get started on making your first discord bot from importing libraries to creating basic commands!
 
