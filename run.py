@@ -1,16 +1,13 @@
-# Import necessary libraries
 import discord
 import logging
 import time
 from discord.ext import commands
 from datetime import datetime
 
-# Store a time format
 start_time = time.time()
 datetime.now()
 current_time = datetime.now().astimezone().strftime("%H:%M")
 
-# Save a file location for logs
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -25,7 +22,6 @@ logging.getLogger("discord").setLevel(logging.WARNING)
 logger = logging.getLogger("Discord Bot")
 
 
-# Command synchronization
 class Client(commands.Bot):
     async def on_ready(self):
         print(f"Logged in as {self.user}!")
@@ -35,7 +31,6 @@ class Client(commands.Bot):
     except Exception as e:
         logger.warning(f"Failed to sync commands: {e}")
 
-# Trigger command when mentioning the bot
     async def on_message(self, message: discord.Message):
         if message.author == self.user:
             return
@@ -47,7 +42,6 @@ class Client(commands.Bot):
           
         await self.process_commands(message)
 
-# Initialize your bot with the necessary intents
 intents = discord.Intents.default()
 intents.members = True
 intents.guilds = True
@@ -69,9 +63,8 @@ async def avatar(interaction: discord.Interaction, user: discord.User):
     
     await interaction.response.send_message(embed=embed)
 
-BOT_TOKEN = 0000  # Save your bot token in the variable
+BOT_TOKEN = 0000  # save your bot token in here
 
-# Run the bot
 try:
     client.run(f"{BOT_TOKEN}")
 except Exception as e:
