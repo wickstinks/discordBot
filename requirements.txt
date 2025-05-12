@@ -1,5 +1,7 @@
-discord
 discord.py
 aiohttp
+aiosignal
+aiohappyeyeballs
 requests
 python-dotenv
+yarl
